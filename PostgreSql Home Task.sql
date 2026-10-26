@@ -1,4 +1,3 @@
-
 create table books(
 	id INT,
  	title VARCHAR(100),
@@ -23,6 +22,46 @@ values (1,  'Əli və Nino',       'Qurban Səid',              'Roman',        
 (10, 'Qaranlıq Meşə',     'Rüfət Məmmədov',           NULL,           11.00, 200, 2015, 'Azərnəşr'),
 (11, 'Dünya Tarixi',      'Tofiq Hüseynov',           'Tarix',        30.00, 800, 2009, 'Qanun'),
 (12, 'Şəhərin Sirri',     'Aysel Babayeva',           'Detektiv',     13.50, 260, 2020, 'Azərnəşr');
+
+-----------select--------------------------
+
+select * from books; --1
+select title,author,price from books; --2
+select title as "kitab",price as "qiymət" from books; --3
+select title,price,price*0.8 as discount_price from books; --4
+select distinct genre from books; --5
+
+------------where-------------------------
+
+select * from books 
+where price>15; --1
+
+select title, author 
+from books 
+where genre = 'Texnologiya'; --2
+
+select * from books
+where price between 10 and 20; --3
+
+select * from books
+where genre in ('Roman', 'Detektiv'); --4
+
+select * from books
+where publish_year>2015; --5
+
+select * from books
+where publisher='Azərnəşr' and pages>250; --6
+
+select * from books
+where publisher is null; --7
+
+select * from books
+where genre is null; --8
+
+select title, genre from books 
+where genre <> 'Tarix'; --9
+
+
 
 
 
